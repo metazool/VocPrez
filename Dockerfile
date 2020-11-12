@@ -5,8 +5,10 @@ WORKDIR /usr/app
 EXPOSE 5000
 
 COPY requirements.txt .
+COPY requirements.deploy.txt .
 
 RUN pip install -r requirements.txt
+RUN pip install -r requirements.deploy.txt
 
 COPY README.md .
 ADD ./vocprez ./vocprez
