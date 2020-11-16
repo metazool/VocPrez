@@ -1,15 +1,14 @@
 version: '2.0'
 services:
   vocprez:
-    build: 
+    build:
         context: .
-        dockerfile: -f Dockerfile
     image: vocprez:latest
     restart: unless-stopped
     ports:
     - "5000:5000"
     volumes:
-    - $PWD/vocprez/_config/template.py:/vocprez/_config/__init__.py
-   
+    - $PWD/vocprez/_config/template.py:/usr/app/vocprez/_config/__init__.py
+
     stdin_open: true
     tty: true
